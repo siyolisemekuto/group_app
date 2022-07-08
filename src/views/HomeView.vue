@@ -1,22 +1,20 @@
 <template>
-
 <Landing/>
-<Form/>
- 
+<SignUp/>
 </template>
 
 <script>
 // @ is an alias to /src
 
 import Landing from '@/components/Landing.vue'
-import Form from '@/components/Form.vue'
+import SignUp from '@/components/SignUp.vue'
 
 export default {
   name: 'HomeView',
   components: {
-  
     Landing,
-    Form
+    SignUp,
+    
 }
 }
 </script>
