@@ -1,34 +1,24 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div id="landing" class="row" >
+      <div id="about" class="col">
+      <h1>Inuit</h1>
+      <p class="about-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat similique iusto perferendis libero architecto atque accusamus repellendus esse, ut, sapiente reiciendis temporibus voluptas aliquam laboriosam tempora voluptatum voluptatem quibusdam, ex eligendi voluptate totam nihil consequatur illum. Fugiat, obcaecati beatae, repellat recusandae magnam aspernatur facilis praesentium suscipit laudantium fugit cupiditate libero!</p>
+      <div class="container">
+      <h1>Welcome</h1>
+      <form @submit.prevent="SubmitForm">
+          <div >
+          <input type="email" name="email" id="email" class="inputs" placeholder="Email" required  v-model="email">
+          <input type="password" name="password" id="password" class="inputs" placeholder="Password" required v-model="Password">
+          </div>
+          <button type="submit" class="btn">Submit</button>
+  </form>
   </div>
+      </div>
+      <div id="Login-SignUp" class="col">
+        <img alt="logo" src="../assets/iconrebg.png">
+
+  </div>
+      </div> 
 </template>
 
 <script>
@@ -38,22 +28,81 @@ export default {
     msg: String
   }
 }
+//  data() {
+// return {
+//    email:'',
+//    Password:''
+// }
+// }
+// methods:{
+// SubmitForm(){
+// }
+// }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+
+#landing{
+  display: flex;
+  width: fit-content;
+  background: linear-gradient(0.5turn, #F5F5DC, #D8A23A);
+  height: 100vh;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.row{
+  font-family: Verdana, sans-serif;
+
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+#about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:auto;
+  padding: 5%;
 }
-a {
-  color: #42b983;
+.about-text{
+  width: fit-content;
+  text-align: center;
+}
+img{
+  width:20rem;
+  height:12rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background:none;
+}
+#Login-SignUp{
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  width: 50vw;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.inputs{
+    width: 450px;
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    border-bottom: 1px solid;
+    background:inherit;
+}
+:-ms-input-placeholder::after{
+    display: none;
+}
+.btn{
+    margin-top: 20px;
+    padding: 5px;
+    font-size: large;;
+    border-radius: 9px;
 }
 </style>
