@@ -8,7 +8,10 @@
 
   <router-view/>
 </template>
-
+<script>
+let user =JSON.parse(localStorage.user);
+console.log(user)
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

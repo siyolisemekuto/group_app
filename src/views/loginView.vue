@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <form @submit.prevent="login">
-      <input type="text" v-model="email" placeholder="email or username" />
+      <input type="text" v-model="email" placeholder="email " />
       <input type="text" v-model="password" placeholder="password" />
       <button type="submit">Login</button>
     </form>
@@ -28,7 +28,12 @@ export default {
       )
         .then((res) => res.json())
         .then((data) => {
-          if (data.length) return (this.user = data[0]);
+          if (data.length)
+            return (
+              (this.user = data[0]),
+              localStorage.setItem("user", JSON.stringify(this.user))
+            );
+
           alert("No user found, please register");
         });
     },
