@@ -14,7 +14,7 @@
   </form>
   </div>
       </div>
-      <div id="Login-SignUp" class="col">
+      <div class="col">
         <img alt="logo" src="../assets/iconrebg.png">
 
   </div>
@@ -43,16 +43,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Ubuntu:wght@300&display=swap');
 #landing{
   display: flex;
   width: fit-content;
   background: linear-gradient(0.5turn, #F5F5DC, #D8A23A);
-  height: 100vh;
+  height: fit-content;
+
 }
 .row{
-  font-family: Verdana, sans-serif;
-
+display: flex;
+justify-content: center;
 }
 #about{
   display: flex;
@@ -66,26 +67,21 @@ export default {
   text-align: center;
 }
 img{
-  width:20rem;
-  height:12rem;
+  width:37rem;
+  height:50rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
   background:none;
+  object-fit: cover;
 }
-#Login-SignUp{
-  width: 100vw;
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-}
+
 .container{
-  width: 50vw;
-  height: 100vh;
+  width: fit-content;
+  height: fit-content;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 10px;
 }
 .inputs{
@@ -105,4 +101,16 @@ img{
     font-size: large;;
     border-radius: 9px;
 }
+form{
+  width: fit-content;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+/* @media only screen and (max-width: 600px){ */
+  /* #about{
+    display:flex;
+    flex:wrap;
+  }
+} */ 
 </style>
