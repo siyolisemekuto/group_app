@@ -9,7 +9,7 @@
 export default {
     data(){
         return {
-            imgIcon:'https://i.postimg.cc/x1LgMPJh/icon-1-removebg-preview.png'
+            imgIcon:'https://i.postimg.cc/nrxbv1nL/icon-1.png'
         }
     }
 }
@@ -18,17 +18,18 @@ export default {
 #footer{
     display: flex;
     justify-content: center; 
+    background-color:#4F4538 ;
+    color:#F5F5DC;
 }
 .footer-content{
     display: flex;
     padding: 5px;
+    gap: 5px;
+    
 }
 img{
-    width:px;
-    height:80px;
+    height: 30px;
 }
-h1{
-    margin-top:6px;
-}
+
 </style>
     

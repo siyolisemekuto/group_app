@@ -27,7 +27,7 @@ SubmitForm(){
 }
 }
 </script>
-<style >
+<style  scoped>
 #Login-SignUp{
   width: 100vw;
   height: 70vh;
