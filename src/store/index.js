@@ -31,11 +31,28 @@ export default createStore({
 
   },
   getters: {
+//profileView.vue
+
   },
   mutations: {
+    //enterSite(){
+
+      // return loginOBJ
+    }
+    //loginUser()
+    //addPost()
+    //deletePost()
+    //addUser()
+    //filterItems()
+    //sortItems()
+    //searchItems()
+
+
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  // actions: {
+
+  // },
+  // modules: {
+  // }
+// }
+)

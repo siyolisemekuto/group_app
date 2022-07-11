@@ -1,8 +1,11 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link>|
+    <router-link to="/login">login</router-link>
   </nav>
+      <div v-if="user">Welcome {{ user.details.username }}</div>
+
   <router-view/>
 </template>
 
