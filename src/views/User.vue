@@ -1,16 +1,16 @@
 <template>
 <section id="user-page">
     
-    <div class="user" >
+    <div class="user"  >
          
-        <div class="user_details">
+        <div class="user_details container">
             <h1>Profile</h1>
         <div id="user-img"><img :src=imgUrl alt="user" class="img"></div>
         <h1>{{ UserName }}</h1>
         <div class="bio">
             <H2>Bio</H2>
             <div class="text">
-            <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, saepe totam. Fugit consequatur necessitatibus quis cumque, nostrum et repellat aliquid nobis ducimus ullam repudiandae possimus? Adipisci porro a quas dolorem!</P>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, saepe totam. Fugit consequatur necessitatibus quis cumque, nostrum et repellat aliquid nobis ducimus ullam repudiandae possimus? Adipisci porro a quas dolorem!</p>
         </div>
         </div>
         </div>
@@ -47,7 +47,24 @@ export default {
 }
 </script>
 <style scoped>
-h1,h2,h3{
+.user_details{
+    height:fit-content;
+    position:absolute;
+    left: -10px;
+    width:20rem;
+}
+img{
+  width: 30px;
+  height: 50;
+  box-shadow:2px 1px ;
+}
+.posts{
+    height:fit-content;
+    position:absolute;
+    right:10px;
+    width:50rem;
+}
+/* h1,h2,h3{
     color: #F5F5DC;
 }
 #user-page{
@@ -60,9 +77,13 @@ background: linear-gradient(0.5turn, #dbdb71, #D8A23A);
     justify-content: center;
     
 }
+.user-details{
+     position: relative;
+     left: -15px;
+}
 .img{
   width: 200px;
-    border: 2px solid black;
+border: 2px solid black;
   border-radius:50%; 
   padding-top: 5px; 
 }
@@ -104,5 +125,5 @@ img{
     display: flex;
     margin: auto;
     gap:5px;
-}
+} */
 </style>
