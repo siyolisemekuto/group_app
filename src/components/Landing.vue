@@ -1,15 +1,12 @@
 <template >
     <section id="landing">
 
-        <div>
+        <div class="contain">
         <h1 class="name">Inuit</h1>
-        <h2  class="name">For U By Us</h2>
+        <p class="caption">Chat free well U Stress Free</p>
         </div>
-      <div class="about">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quo voluptas esse, rerum possimus tempora tenetur deleniti magnam corporis, aspernatur odit harum recusandae iste architecto dolor aliquam asperiores assumenda nemo.
-        </p>
-      </div>
+      
+   
 
     </section>
 </template>
@@ -20,19 +17,42 @@ export default {
 </script>
 <style >
     #landing{
-        background: url('https://leverageedu.com/blog/wp-content/uploads/2020/05/Modes-of-Communication.png');
+        background:url('https://artlogic-res.cloudinary.com/w_1200,c_limit,f_auto,fl_lossy,q_auto/ws-firstarts/usr/images/exhibitions/group_images_override/39/ds2281-1-2.jpg');
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100vw;
         height: 100vh;
+        padding-top:50px;
         
     }
+    .contain{
+ 
+        color: black;
+        height: 90%;
+        width: 90%;
+        -webkit-border-top-left-radius: 200px;
+-webkit-border-bottom-right-radius: 200px;
+-moz-border-radius-topleft: 200px;
+-moz-border-radius-bottomright: 200px;
+border-top-left-radius: 200px;
+border-bottom-right-radius: 200px;
+background: linear-gradient(0.5turn, #dbdb71, #D8A23A);
+
+
+    }
     .name{
-        font-size: 3rem;
+        margin-left: 125px;
+        text-align: start;
+        font-size: 10rem;
+        opacity: 0.7;
+        z-index:-20;
     }
     .about{
         width: 50vw;
         font-size: 25px;
+    }
+    .caption{
+        font-size: 400%;
     }
 </style> 
