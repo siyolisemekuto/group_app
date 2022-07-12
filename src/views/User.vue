@@ -47,24 +47,10 @@ export default {
 }
 </script>
 <style scoped>
-.user_details{
-    height:fit-content;
-    position:absolute;
-    left: -10px;
-    width:20rem;
+#user-page{
+    background-image: url('https://cdn.shopify.com/s/files/1/1294/9703/products/proud-new-mother-inuit-art-card.gif?v=1625188889');
 }
-img{
-  width: 30px;
-  height: 50;
-  box-shadow:2px 1px ;
-}
-.posts{
-    height:fit-content;
-    position:absolute;
-    right:10px;
-    width:50rem;
-}
-/* h1,h2,h3{
+h1,h2,h3{
     color: #F5F5DC;
 }
 #user-page{
@@ -125,5 +111,5 @@ img{
     display: flex;
     margin: auto;
     gap:5px;
-} */
+}
 </style>
