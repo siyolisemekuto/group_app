@@ -6,6 +6,7 @@
       <button type="submit">Login</button>
     </form>
     <div v-if="user">Welcome {{ user.details.username }}</div>
+    <div v-if="incorrect">You have mistaken your details my child</div>
   </div>
 </template>
 <script>
@@ -17,7 +18,7 @@ export default {
   },
   computed: {
     users() {
-      return store.state.data;
+      return store.state.posts;
     },
   },
   data() {
@@ -29,7 +30,7 @@ export default {
   },
   methods: {
     login() {
-      //  users?details.email=${this.email}&details.password=${this.password}
+       users.details.email==email&&details.password==password?user=user:incorrect;
 
       alert("found you");
       //   alert("No user found, please register");
