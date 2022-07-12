@@ -1,8 +1,17 @@
 <template>
+<Navbar/>
   <HomeView></HomeView>
   <ViewAll_Feed></ViewAll_Feed>
   <router-view></router-view>
 </template>
+<script>
+import Navbar from "./components/Navbar.vue";
+export default{
+  components:{
+    Navbar
+  }
+}
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Ubuntu:wght@300&display=swap');
