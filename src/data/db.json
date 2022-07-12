@@ -41,14 +41,14 @@
       "friends": [],
       "messages": [
         { "messageKey": "", "messageType": "pushedNotification, sharedPost" }
-      ],
-      "posts": [
-        {
-          "postID": "userId+post.length++",
-          "postText": "text text text text text text text ",
-          "postStatus": "text,video,image,link"
-        }
       ]
+    }
+  ],
+  "posts": [
+    {
+      "postID": "userId+post.length++",
+      "postText": "text text text text text text text ",
+      "postStatus": "text,video,image,link"
     }
   ]
 }

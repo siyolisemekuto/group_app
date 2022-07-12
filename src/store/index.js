@@ -2,20 +2,17 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    data:fetch(
-      `http://localhost:3000/users`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.length)
-          return (
-            (this.user = data[0]),
-            localStorage.setItem("user", JSON.stringify(this.user))
-          );
-      })
+    posts: [],
   },
-  getters: {},
+  getters: {
+    getPost(state) {
+      state.posts;
+    },
+  },
   mutations: {
+    setPost(state, posts) {
+      state.posts = posts;
+    },
     //enterSite(){
     // return loginOBJ
     // }
@@ -28,6 +25,15 @@ export default createStore({
     //searchItems()
   },
   actions: {
+    async getPostData(context) {
+      fetch("http://localhost:3000/posts")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          context.commit("setPost", data);
+        });
+    },
+
     //profileView.vue
     user: (state) => {
       let users = state.users.map((user) => {

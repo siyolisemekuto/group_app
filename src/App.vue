@@ -5,17 +5,31 @@
     <router-link to="/login">login</router-link>
   </nav>
   <div v-if="user">Welcome {{ user.details.username }}</div>
-
+  <div v-for="post in posts" :key="post.postID">
+    <h1>{{ post.postStatus }}</h1>
+  </div>
   <router-view />
 </template>
 <script>
+import store from "./store";
 export default {
+  data() {
+    return {
+      posts: store.state.posts,
+    };
+  },
   computed: {
     //place this in navbar
-    user() {
-      return this.$store.state.user;
-    },
+    // user() {
+    //   return store.state.user;
+    // },
     //for navbar above
+  },
+  mounted() {
+    store.dispatch("getPostData");
+  },
+  created() {
+    // const getPosts = (this.posts = store.getters.getPost);
   },
 };
 // let user =JSON.parse(localStorage.user);

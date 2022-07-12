@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+import store from "../store";
 export default {
   name: "HelloWorld",
   props: {
@@ -16,7 +17,7 @@ export default {
   },
   computed: {
     users() {
-      return this.$store.state.data;
+      return store.state.data;
     },
   },
   data() {
@@ -28,11 +29,12 @@ export default {
   },
   methods: {
     login() {
-    //  users?details.email=${this.email}&details.password=${this.password}
-    for()
-          alert("No user found, please register");
-        });
+      //  users?details.email=${this.email}&details.password=${this.password}
+
+      alert("found you");
+      //   alert("No user found, please register");
     },
   },
 };
+console.log(store.state.data);
 </script>
