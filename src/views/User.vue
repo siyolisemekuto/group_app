@@ -1,28 +1,21 @@
 <template>
 <section id="user-page">
-    
-    <div class="user" >
-         
-        <div class="user_details">
+    <div class="user"  >
+         <div class="use">
+        <div class="user_details container">
             <h1>Profile</h1>
         <div id="user-img"><img :src=imgUrl alt="user" class="img"></div>
         <h1>{{ UserName }}</h1>
         <div class="bio">
             <H2>Bio</H2>
             <div class="text">
-            <P>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, saepe totam. Fugit consequatur necessitatibus quis cumque, nostrum et repellat aliquid nobis ducimus ullam repudiandae possimus? Adipisci porro a quas dolorem!</P>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, saepe totam. Fugit consequatur necessitatibus quis cumque, nostrum et repellat aliquid nobis ducimus ullam repudiandae possimus? Adipisci porro a quas dolorem!</p>
+        </div>
         </div>
         </div>
         </div>
     </div>
     <div class="posts">
-     <div class="post">
-        <div class="use">
-            <img :src="post_sender_img" alt="">
-      <h3>{{ post_sender }}</h3>
-      </div>
-      <p>{{ post_text }}</p>
-     </div>
        <div class="post">
         <div class="use">
             <img :src="post_sender_img" alt="">
@@ -30,7 +23,7 @@
       </div>
       <p>{{ post_text }}</p>
      </div>
-    </div>
+</div>
     </section>
 </template>
 <script>
@@ -47,21 +40,25 @@ export default {
 }
 </script>
 <style scoped>
+#user-page{
+    background-image: url('https://cdn.shopify.com/s/files/1/1294/9703/products/proud-new-mother-inuit-art-card.gif?v=1625188889');
+}
 h1,h2,h3{
     color: #F5F5DC;
 }
 #user-page{
     height: fit-content;
+background: linear-gradient(0.5turn, #dbdb71, #D8A23A);
 }
 .user{
     padding:10%;
     display: flex;
     justify-content: center;
-  
+    
 }
 .img{
   width: 200px;
-    border: 2px solid black;
+border: 2px solid black;
   border-radius:50%; 
   padding-top: 5px; 
 }
@@ -75,7 +72,6 @@ h1,h2,h3{
     width: fit-content;
     border: 1px solid black;
     border-radius: 10px;
-        background-color: #D8A23A;  
 }
 .posts{
       padding: 20px;
@@ -87,13 +83,13 @@ h1,h2,h3{
 .post{
     width: 250px;
     height: fit-content;
+    height: 200px;
     border: 2px double #8F7245 ;
     border-radius:10px ;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-bottom: 5px;
-    background-color: #D8A23A;
 }
 img{
   width: 30px;

@@ -1,13 +1,18 @@
 <template >
     <div>
          <nav>
+          <div v-if="!user">
     <router-link to="/viewall_feed"><img :src=imgIcon /></router-link> 
-    <div class='Icons'>
+ <div class='Icons'>  |   
     <router-link to="/user"><i class="fa-solid fa-user"></i></router-link> |
         <router-link to="/theme"><i class="fa-solid fa-t"></i></router-link>    |
     <router-link to="/notification"><i class="fa-solid fa-bell"></i></router-link> |
-
     </div>
+          </div>
+          <div v-else>
+                <router-link to="/"><img :src=imgIcon /></router-link> 
+          </div>
+   
   </nav>
     </div>
 </template>

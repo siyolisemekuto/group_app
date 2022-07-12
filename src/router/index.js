@@ -16,28 +16,28 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/viewall_feed',
-    name: 'ViewAll_Feed',
- 
-    component: () => import('../views/ViewAll_Feed.vue')
-  },
-  {
     path: '/user',
     name: 'user',
- 
-    component: () => import('../views/User.vue')
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/User.vue')
   },
   {
-    path: '/viewall_feed',
-    name: 'ViewAll_Feed',
- 
-    component: () => import('../views/ViewAll_Feed.vue')
+    path: '/theme',
+    name: 'theme',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Themes.vue')
   },
   {
-    path: '/singleview/:id',
-    name: 'SingleView',
- 
-    component: () => import('../views/SingleView.vue')
+    path: '/notification',
+    name: 'notification',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Notification.vue')
   }
 ]
 
