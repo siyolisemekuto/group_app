@@ -1,0 +1,109 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "username": "Siyolise Mekuto",
+      "message": "lorem ipsum",
+      "image": "https://picsum.photos/200/300?random=1",
+      "video": ""
+    },
+    {
+      "id": 2,
+      "username": "Lihle Goliath",
+      "message": "lorem ipsum",
+      "image": "https://picsum.photos/200/300?random=2",
+      "video": ""
+    },
+    {
+      "id": 3,
+      "username": "Abdool-zaid Toorabally",
+      "message": "lorem ipsum",
+      "image": "https://picsum.photos/200/300?random=3",
+      "video": ""
+    },
+    {
+      "id": 4,
+      "username": "Tshimologo King Mabena",
+      "message": "lorem ipsum",
+      "image": "https://picsum.photos/200/300?random=4",
+      "video": ""
+    },
+    {
+      "id": 5,
+      "username": "Jason Wandrag",
+      "message": "lorem ipsum",
+      "image": "https://picsum.photos/200/300?random=5",
+      "video": ""
+    },
+    {
+      "id": 6,
+      "username": "Jesse Spence",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=6",
+      "video": ""
+    },
+    {
+      "id": 7,
+      "username": "Mudassar Khopatkar",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=7",
+      "video": ""
+    },
+    {
+      "id": 8,
+      "username": "Le-Andre Moritz",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=8",
+      "video": ""
+    },
+    {
+      "id": 9,
+      "username": "Mikhail Thomas",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=9",
+      "video": ""
+    },
+    {
+      "id": 10,
+      "username": "Cassidy Manuel",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=10",
+      "video": ""
+    },
+    {
+      "id": 11,
+      "username": "Cameron Stemmet",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=11",
+      "video": ""
+    },
+    {
+      "id": 12,
+      "username": "Zachary Williams",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=12",
+      "video": ""
+    },
+    {
+      "id": 13,
+      "username": "Zoe Van De Schyff",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=13",
+      "video": ""
+    },
+    {
+      "id": 14,
+      "username": "Abu-Bakr Khan",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=14",
+      "video": ""
+    },
+    {
+      "id": 15,
+      "username": "Mika Rinquest",
+      "message": "",
+      "image": "https://picsum.photos/200/300?random=15",
+      "video": ""
+    }
+  ]
+}
