@@ -32,10 +32,14 @@ section{
     padding-top: 50px;
     background-color:#F5F5DC;
     height: 100vh;
+    background: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fartlogic-res.cloudinary.com%2Fw_1200%2Cc_limit%2Cf_auto%2Cfl_lossy%2Cq_auto%2Fws-firstarts%2Fusr%2Fimages%2Fexhibitions%2Fgroup_images_override%2F39%2Fds2281-1-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     }
 p.head{
         text-align: start;
-
+        z-index: -1;
+        font-size: 2rem;
 }
 .post{
     width: 80vw;

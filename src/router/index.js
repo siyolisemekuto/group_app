@@ -20,6 +20,18 @@ const routes = [
     name: 'ViewAll_Feed',
  
     component: () => import('../views/ViewAll_Feed.vue')
+  },
+  {
+    path: '/user',
+    name: 'user',
+ 
+    component: () => import('../views/User.vue')
+  },
+  {
+    path: '/viewall_feed',
+    name: 'ViewAll_Feed',
+ 
+    component: () => import('../views/ViewAll_Feed.vue')
   }
 ]
 

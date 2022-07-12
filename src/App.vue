@@ -1,14 +1,17 @@
 <template>
 <Navbar/>
   <HomeView></HomeView>
-  <ViewAll_Feed></ViewAll_Feed>
+
   <router-view></router-view>
+  <Footer/>
 </template>
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 export default{
   components:{
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
