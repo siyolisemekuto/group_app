@@ -3,16 +3,23 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     posts: [],
+    user:[]
   },
   getters: {
     getPost(state) {
       state.posts;
     },
+    getUser(state) {
+      state.user;
+    }
   },
   mutations: {
     setPost(state, posts) {
       state.posts = posts;
     },
+    setUser(state, user) {
+      state.user = user;
+    }
     //enterSite(){
     // return loginOBJ
     // }
@@ -25,6 +32,13 @@ export default createStore({
     //searchItems()
   },
   actions: {
+    async login(commit,payload){
+      fetch('http://localhost:3000/users')
+      .then(res => res.json())
+      .then(data => {
+        commit('setUser',payload)
+      })
+    },
     async getPostData(context) {
       fetch("http://localhost:3000/users")
         .then((res) => res.json())

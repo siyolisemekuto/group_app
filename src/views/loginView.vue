@@ -30,12 +30,15 @@ export default {
   },
   methods: {
     login() {
-       users.details.email==email&&details.password==password?user=user:incorrect;
+     
+      // (this.$store.users.details.email == email) &
+      // (details.password == password)
+      //   ? (user = user)
+      //   : incorrect;
 
-      alert("found you");
+      // alert("found you");
       //   alert("No user found, please register");
     },
   },
 };
-console.log(store.state.data);
 </script>
