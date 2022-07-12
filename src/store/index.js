@@ -2,39 +2,19 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    users: [
-      {
-        details: {
-          password: "definetlyNotPassword",
-          username: "Abdool-Zaid",
-          email: "aztoorabally7447@gmail.com",
-          userID: 1,
-        },
-        theme: "fire",
-        profile: {
-          usericon:
-            "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
-          heading: "Your pathFinder is here",
-          blurb: "profile pic by lyy at danbooru.donmai.us",
-        },
-        friends: [],
-        messages: [
-          { messageKey: "", messageType: "pushedNotification, sharedPost" },
-        ],
-        posts: [
-          {
-            postID: "userId+post.length++",
-            postText: "text text text text text text text ",
-            postStatus: "text,video,image,link",
-          },
-        ],
-      },
-    ]
-    
+    data:fetch(
+      `http://localhost:3000/users`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length)
+          return (
+            (this.user = data[0]),
+            localStorage.setItem("user", JSON.stringify(this.user))
+          );
+      })
   },
-  getters: {
-    //profileView.vue
-  },
+  getters: {},
   mutations: {
     //enterSite(){
     // return loginOBJ
@@ -47,6 +27,34 @@ export default createStore({
     //sortItems()
     //searchItems()
   },
-  actions: {},
+  actions: {
+    //profileView.vue
+    user: (state) => {
+      let users = state.users.map((user) => {
+        return {
+          user: users.details.username
+            ? users.details.username
+            : users.details.email,
+          theme: users.theme,
+          userIcon: users.profile.usericon,
+          bio: users.profile.blurb,
+          mantle: users.profile.heading,
+        };
+      });
+    },
+    //feedView.vue
+    posts: (state) => {
+      let posts = state.users.posts.map((post) => {
+        return {
+          //id
+          id: users.posts.postID,
+          //type
+          type: users.posts.postStatus,
+          //body
+          body: users.posts.postText,
+        };
+      });
+    },
+  },
   modules: {},
 });

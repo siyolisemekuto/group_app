@@ -4,13 +4,22 @@
     <router-link to="/about">About</router-link>|
     <router-link to="/login">login</router-link>
   </nav>
-      <div v-if="user">Welcome {{ user.details.username }}</div>
+  <div v-if="user">Welcome {{ user.details.username }}</div>
 
-  <router-view/>
+  <router-view />
 </template>
 <script>
-let user =JSON.parse(localStorage.user);
-console.log(user)
+export default {
+  computed: {
+    //place this in navbar
+    user() {
+      return this.$store.state.user;
+    },
+    //for navbar above
+  },
+};
+// let user =JSON.parse(localStorage.user);
+// console.log(user)
 </script>
 <style>
 #app {

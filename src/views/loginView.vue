@@ -14,6 +14,11 @@ export default {
   props: {
     msg: String,
   },
+  computed: {
+    users() {
+      return this.$store.state.data;
+    },
+  },
   data() {
     return {
       email: "",
@@ -23,17 +28,8 @@ export default {
   },
   methods: {
     login() {
-      fetch(
-        `http://localhost:3000/users?details.email=${this.email}&details.password=${this.password}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.length)
-            return (
-              (this.user = data[0]),
-              localStorage.setItem("user", JSON.stringify(this.user))
-            );
-
+    //  users?details.email=${this.email}&details.password=${this.password}
+    for()
           alert("No user found, please register");
         });
     },
