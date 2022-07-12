@@ -1,7 +1,7 @@
 <template>
-<Navbar/>
-  <HomeView></HomeView>
-
+  <Navbar/>
+  <SingleView/>
+  <HomeView/>
   <router-view></router-view>
   <Footer/>
 </template>

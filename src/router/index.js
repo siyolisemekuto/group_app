@@ -32,6 +32,12 @@ const routes = [
     name: 'ViewAll_Feed',
  
     component: () => import('../views/ViewAll_Feed.vue')
+  },
+  {
+    path: '/singleview/:id',
+    name: 'SingleView',
+ 
+    component: () => import('../views/SingleView.vue')
   }
 ]
 

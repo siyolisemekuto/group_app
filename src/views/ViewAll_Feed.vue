@@ -1,16 +1,14 @@
 <template>
-    <section>
-        <h1>Feed</h1>
+    <h1>Feed</h1>
       <div id="timeline">
        <div class="feed">
         <div class="post">
-            <img :src="user.user_img" alt="">
+        <img :src="user.user_img" alt="user name">
          <p class="head"><strong>{{user.username}}</strong></p>
          <h3>{{user.post}}</h3>
         </div>
        </div>
       </div> 
-    </section>
 </template>
 <script>
 export default {

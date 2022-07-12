@@ -52,7 +52,6 @@ h1,h2,h3{
 }
 #user-page{
     height: fit-content;
-background: ;
 }
 .user{
     padding:10%;
