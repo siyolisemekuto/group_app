@@ -36,7 +36,8 @@ computed:{
     Quotes(){
         return this.$store.state.Quotes
     }
-}
+},
+
 }
 </script>
 <style scoped>
@@ -52,7 +53,7 @@ section{
     margin-top:50px ;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+gap:10px;
 }
 .notice{
 border:1px solid black;

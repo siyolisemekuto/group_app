@@ -47,9 +47,9 @@ getUserPosts: async (context,payload)=>{
   .then(res => res.json())
   .then(data => context.commit('setUsersPosts',data))
   },
-  SubmitForm: async (context, payload) => {
+  login: async (context, payload) => {
     const { email, password } = payload;
-    let response = await fetch(`http://localhost:3000/users?${email}`)
+    let response = await fetch(`http://localhost:3000/users/?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length === 0) {
@@ -66,7 +66,8 @@ getUserPosts: async (context,payload)=>{
         }
       });
     console.log(response);
-  },
+    context.commit("setUser")
+  }
   },
   modules: {
   }

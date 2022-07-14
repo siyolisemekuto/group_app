@@ -15,7 +15,7 @@
   </div>
       </div>
       <div class="col">
-        <img alt="logo" src="../assets/iconrebg.png">
+        <img alt="logo" :src="imgUrl">
 
   </div>
       </div> 
@@ -32,14 +32,15 @@ return {
    email:'',
    Password:'',
    user:null,
+   imgUrl:"https://i.postimg.cc/nrxbv1nL/icon-1.png"
 
 }
 },
 methods:{
  SubmitForm(){
-store.dispatch("SubmitForm", {
+this.$store.state.user.dispatch("SubmitForm", {
      email: this.email,
-     password: this.password,  
+     password: this.Password,  
  });}
 }
 }
@@ -72,8 +73,8 @@ justify-content: center;
   text-align: center;
 }
 img{
-  width:37rem;
-  height:50rem;
+  width:37vw;
+  height:60vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
