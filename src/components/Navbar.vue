@@ -5,20 +5,24 @@
     <div class='Icons'>
     <router-link to="/user"><i class="fa-solid fa-user"></i></router-link> |
         <router-link to="/theme"><i class="fa-solid fa-t"></i></router-link>    |
-    <router-link to="/notification"><i class="fa-solid fa-bell"></i></router-link> |
+    <router-link to="/notification" @click="picker" toggle="picker"><i class="fa-solid fa-bell"></i></router-link> |
 
     </div>
   </nav>
     </div>
 </template>
 <script>
+import NotificationVue from '@/views/Notification.vue'
+
 export default {
      data(){
         return {
             imgIcon:'https://i.postimg.cc/nrxbv1nL/icon-1.png'
         }
-    }
-}
+    },
+
+} 
+
 </script>
 <style scoped>
 nav a{
