@@ -3,12 +3,16 @@
         <div class="container">
     <h1>Notifications</h1>
     <p>Here are Your Notification</p>
-    <div class="notices">
-
-        <div class="notice">
+    <div v-if="Quotes" class="notices">
+          <div class="notice">
             <img :src="notice_imageUrl" alt="">
           <h3>{{notice_sender}}</h3>
             <p>{{notice_brief}}</p>
+            </div>
+            <div v-for="Quote in Quotes" :key="Quote.id" class="notice">
+            <img :src="notice_imageUrl" alt="">
+          <h3>{{notice_sender}}</h3>
+            <p>{{Quote.string}}</p>
             </div>
     </div>
     </div>
@@ -24,22 +28,31 @@ export default {
         notice_brief:"Daliy Motivation",
         notice:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veniam quo reiciendis architecto molestias dolorum ea placeat voluptatem, nemo voluptatibus cumque aut facere inventore optio eligendi nulla cum sapiente reprehenderit."
      }
+    },
+    mounted(){
+    this.$store.dispatch("getQuotes")
+},
+computed:{
+    Quotes(){
+        return this.$store.state.Quotes
     }
+}
 }
 </script>
 <style scoped>
 section{
-    height: 100vh;
+    height: fit-content;
    padding-top: 100px; 
     padding-bottom: 100px; 
-   background: url('https://www.arcticfocus.org/media/images/eNUK1-copy-1080x720.2e16d0ba.fill-1370x700-c100.jpg');
+        background:url('https://artlogic-res.cloudinary.com/w_1200,c_limit,f_auto,fl_lossy,q_auto/ws-firstarts/usr/images/exhibitions/group_images_override/39/ds2281-1-2.jpg');
    background-repeat: no-repeat;
    background-size: cover;
 }
 .notices{
     margin-top:50px ;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .notice{
 border:1px solid black;

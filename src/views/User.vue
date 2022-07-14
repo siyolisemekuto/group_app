@@ -6,7 +6,7 @@
         <div class="user_details container">
             <h1>Profile</h1>
         <div id="user-img"><img :src=imgUrl alt="user" class="img"></div>
-        <h1>{{ UserName }}</h1>
+        <H1><input type="text" name="user" id="i" :placeholder="UserName "></H1>
         <div class="bio">
             <H2>Bio</H2>
             <div class="text">
@@ -72,6 +72,12 @@ background: linear-gradient(0.5turn, #dbdb71, #D8A23A);
 border: 2px solid black;
   border-radius:50%; 
   padding-top: 5px; 
+}
+input{
+    
+    background: none;
+    border: none;
+    text-align: center;
 }
 .text{
     width:500px;
