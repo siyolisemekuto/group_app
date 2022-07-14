@@ -1,17 +1,20 @@
 import { createStore } from "vuex";
+// import axios from "axios";
 
 export default createStore({
   state: {
     posts: [],
-    user:[]
+    user: null,
   },
   getters: {
+    // allData: axios
+    //   .get("/path", (res) => {
+    //     res.json();
+    //   })
+    //   .then((data) => console.log(data)),
     getPost(state) {
       state.posts;
     },
-    getUser(state) {
-      state.user;
-    }
   },
   mutations: {
     setPost(state, posts) {
@@ -19,7 +22,8 @@ export default createStore({
     },
     setUser(state, user) {
       state.user = user;
-    }
+    },
+
     //enterSite(){
     // return loginOBJ
     // }
@@ -32,15 +36,8 @@ export default createStore({
     //searchItems()
   },
   actions: {
-    async login(commit,payload){
-      fetch('http://localhost:3000/users')
-      .then(res => res.json())
-      .then(data => {
-        commit('setUser',payload)
-      })
-    },
     async getPostData(context) {
-      fetch("http://localhost:3000/users")
+      fetch("http://localhost:3000/data")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -74,6 +71,26 @@ export default createStore({
           body: users.posts.postText,
         };
       });
+    },
+    login: async (context, payload) => {
+      const { email, password } = payload;
+      let response = await fetch(`http://localhost:3000/Data/?email=${email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.length === 0) {
+            alert("Email not found");
+          } else {
+            // Compare password
+            let databasePass = data[0].password;
+            if (databasePass !== password) {
+              alert("Password doesnt match");
+            } else {
+              let user=data
+              return user
+            }
+          }
+        });
+      console.log(response);
     },
   },
   modules: {},

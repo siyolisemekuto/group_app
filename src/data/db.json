@@ -1,54 +1,52 @@
 {
-  "users": [
+  "Data": [
     {
-      "details": {
-        "password": "definetlyNotPassword",
-        "username": "Abdool-Zaid",
-        "email": "aztoorabally7447@gmail.com",
-        "userID": 1
-      },
-      "theme": "fire",
-      "profile": {
-        "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
-        "heading": "Your pathFinder is here",
-        "blurb": "profile pic by lyy at danbooru.donmai.us"
-      },
-      "friends": [],
-      "messages": [
-        { "messageKey": "", "messageType": "pushedNotification, sharedPost" }
-      ],
-      "posts": [
-        {
-          "postID": "userId+post.length++",
-          "postText": "text text text text text text text ",
-          "postStatus": "text,video,image,link"
-        }
-      ]
+      "id": 1,
+      "email": "shane@gmail.com",
+      "password": "password"
     },
     {
-      "details": {
-        "password": "Password",
-        "username": "king",
-        "email": "king@gmail.com",
-        "userID": 2
-      },
+      "id": 1,
+      "username": "shane",
+      "theme": "air",
+      "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
+      "heading": "Your pathFinder is here",
+      "blurb": "profile pic by lyy at danbooru.donmai.us"
+    },
+    { "id": 1, "friendsList": [2, 3, 4] },
+    { "id": 1, "messageType": "text", "messageKey": "" },
+    { "id": 1, "postID": 1, "postType": "text", "postString": "meow" },
+    {
+      "id": 2,
+      "email": "abdool@gmail.com",
+      "password": "notpassword"
+    },
+    {
+      "id": 2,
+      "username": "Abdool",
+      "theme": "fire",
+      "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
+      "heading": "Your pathFinder is here",
+      "blurb": "profile pic by lyy at danbooru.donmai.us"
+    },
+    { "id": 2, "friendsList": [1, 3, 4] },
+    { "id": 2, "messageType": "text", "messageKey": "" },
+    { "id": 2, "postID": 1, "postType": "text", "postString": "tree" },
+    {
+      "id": 3,
+      "email": "king@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "username": "King",
       "theme": "earth",
-      "profile": {
-        "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
-        "heading": "yo",
-        "blurb": "profile pic by lyy at danbooru.donmai.us"
-      },
-      "friends": [],
-      "messages": [
-        { "messageKey": "", "messageType": "pushedNotification, sharedPost" }
-      ],
-      "posts": [
-        {
-          "postID": "userId+post.length++",
-          "postText": "text text text text text text text ",
-          "postStatus": "text,video,image,link"
-        }
-      ]
-    }
+      "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
+      "heading": "Your pathFinder is here",
+      "blurb": "profile pic by lyy at danbooru.donmai.us"
+    },
+    { "id": 3, "friendsList": [1, 2, 4] },
+    { "id": 3, "messageType": "text", "messageKey": "" },
+    { "id": 3, "postID": 1, "postType": "text", "postString": "rock" }
   ]
-}
+  }

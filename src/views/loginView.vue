@@ -5,7 +5,7 @@
       <input type="text" v-model="password" placeholder="password" />
       <button type="submit">Login</button>
     </form>
-    <div v-if="user">Welcome {{ user.details.username }}</div>
+    <div v-if="user">Welcome {{ data.username}}</div>
     <div v-if="incorrect">You have mistaken your details my child</div>
   </div>
 </template>
@@ -30,14 +30,18 @@ export default {
   },
   methods: {
     login() {
-     
-      // (this.$store.users.details.email == email) &
-      // (details.password == password)
+      store.dispatch("login", {
+        email: this.email,
+        password: this.password,
+        
+      });
+      // console.log(store.state.posts);
+      // this.$store.posts.details.email == email &  posts.details.password == password
       //   ? (user = user)
       //   : incorrect;
 
       // alert("found you");
-      //   alert("No user found, please register");
+      // alert("No user found, please register");
     },
   },
 };
