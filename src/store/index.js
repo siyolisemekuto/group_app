@@ -67,6 +67,11 @@ getUserPosts: async (context,payload)=>{
       });
     console.log(response);
     context.commit("setUser")
+  },
+  delete: async (context,id)=>{
+    fetch(`http://localhost:3000/posts?${id}`, {
+  method: 'DELETE',
+});
   }
   },
   modules: {

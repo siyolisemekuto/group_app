@@ -39,7 +39,7 @@
     "posts": [
       {
         "id": 1,
-        "userId": 3,
+ 
         "username": "Siyolise Mekuto",
         "message": "lorem ipsum",
         "image": "https://picsum.photos/200/300?random=1",

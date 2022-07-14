@@ -5,7 +5,7 @@
     <div class='Icons'>
     <router-link to="/user"><i class="fa-solid fa-user"></i></router-link> |
         <router-link to="/theme"><i class="fa-solid fa-t"></i></router-link>    |
-    <router-link to="/notification"><i class="fa-solid fa-bell"></i></router-link> |
+    <router-link to="/notification" @click="picker"><i class="fa-solid fa-bell"></i></router-link> |
     <router-link to="/viewall_feed">Feed</router-link> |
 
     </div>

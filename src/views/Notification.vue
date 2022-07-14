@@ -13,8 +13,9 @@
             <img :src="notice_imageUrl" alt="">
           <h3>{{notice_sender}}</h3>
             <p>{{Quote.string}}</p>
-            </div>
+            </div>     
     </div>
+
     </div>
     </section>
 </template>
@@ -35,10 +36,17 @@ export default {
 computed:{
     Quotes(){
         return this.$store.state.Quotes
-    }
+      }
 },
-
+methods: {
+  
+//   picker() {
+//   let quoteChosen = Math.floor(Math.random() * this.Quotes.length);
+//   this.quoteToday = this.Quotes[quoteChosen];
+// }
 }
+}
+
 </script>
 <style scoped>
 section{
