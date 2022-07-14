@@ -1,40 +1,45 @@
-{
-    "users": [
-      {
-        "details": {
-          "password": "definetlyNotPassword",
-          "username": "Abdool-Zaid",
-          "email": "aztoorabally7447@gmail.com",
-          "userID": 1
+{"users": [
+        {
+            "id": 1,
+            "email": "shane@gmail.com",
+            "password": "password",
+            "username": "shane",
+            "theme": "air",
+            "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
+            "heading": "Your pathFinder is here",
+            "blurb": "profile pic by lyy at danbooru.donmai.us",
+           "friendsList": [2, 3, 4] 
         },
-        "theme": "fire",
-        "profile": {
-          "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
-          "heading": "Your pathFinder is here",
-          "blurb": "profile pic by lyy at danbooru.donmai.us"
-        },
-        "friends": [],
-        "messages": [
-          { "messageKey": "", "messageType": "pushedNotification, sharedPost" }
-        ],
-        "posts": [
           {
-            "postID": "userId+post.length++",
-            "postText": "text text text text text text text ",
-            "postStatus": "text,video,image,link"
-          },
+            "id": 2,
+            "email": "abdool@gmail.com",
+            "password": "notpassword",
+            "username": "Abdool",
+            "theme": "fire",
+            "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
+            "heading": "Your pathFinder is here",
+            "blurb": "profile pic by lyy at danbooru.donmai.us",
+           "friendsList": [1, 3, 4] 
+        },         
           {
-            "postID": 1,
-            "postText": "Welcome to Inuit Chat Free Site",
-            "postStatus": "text,video,image,link"
-          }
-        ]
-      }
+            "id": 3,
+            "email": "king@gmail.com",
+            "password": "password",
+            "username": "King",
+            "theme": "earth",
+            "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
+            "heading": "Your pathFinder is here",
+            "blurb": "profile pic by lyy at danbooru.donmai.us",
+         "friendsList": [1, 2, 4] 
+        }
+      
+       
     ],
   
     "posts": [
       {
         "id": 1,
+        "userId": 3,
         "username": "Siyolise Mekuto",
         "message": "lorem ipsum",
         "image": "https://picsum.photos/200/300?random=1",
@@ -50,9 +55,7 @@
       {
         "id": 3,
         "username": "Abdool-zaid Toorabally",
-        "message": "lorem ipsum",
-        "image": "https://picsum.photos/200/300?random=3",
-        "video": ""
+        "message": "lorem ipsum"
       },
       {
         "id": 4,

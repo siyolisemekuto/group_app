@@ -1,7 +1,9 @@
+import { buildSlots } from '@vue/compiler-core';
 import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    user:null,
     posts:null,
     UserPosts:null,
     Quotes:null
@@ -22,7 +24,10 @@ export default createStore({
   },
   setUsersPosts(state,UserPosts){
     state.UserPosts = UserPosts;
-  }
+  },
+  setUser(state,user ){
+    state.user = user;
+  },
  },
   actions: {
   getPosts: async (context)=>{
@@ -41,7 +46,27 @@ getUserPosts: async (context,payload)=>{
   fetch(`http://localhost:3000/users?details${username}`)
   .then(res => res.json())
   .then(data => context.commit('setUsersPosts',data))
-  }
+  },
+  SubmitForm: async (context, payload) => {
+    const { email, password } = payload;
+    let response = await fetch(`http://localhost:3000/users?${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length === 0) {
+          alert("Email not found");
+        } else {
+          // Compare password
+          let databasePass = data[0].password;
+          if (databasePass !== password) {
+            alert("Password doesnt match");
+          } else {
+            let user=data
+            return user
+          }
+        }
+      });
+    console.log(response);
+  },
   },
   modules: {
   }

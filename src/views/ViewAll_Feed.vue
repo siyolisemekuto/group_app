@@ -8,6 +8,7 @@
         <p class="head">{{ post.username }}</p>
         <img :src="post.image" alt="image"/>
         <span>{{ post.message }}</span>
+       
         </div>
         </div>
        </div>
