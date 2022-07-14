@@ -3,29 +3,28 @@
     <form @submit.prevent="login">
       <input type="text" v-model="email" placeholder="email " />
       <input type="text" v-model="password" placeholder="password" />
-      <button type="submit">Login</button>
+      <button type="submit">submit</button>                             
     </form>
-    <div v-if="user">Welcome {{ data.username}}</div>
-    <div v-if="incorrect">You have mistaken your details my child</div>
+    <div v-if="user">Welcome {{ data.username }}</div>
   </div>
 </template>
 <script>
 import store from "../store";
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
+  
+  mounted(){
+let user=this.$store.dispatch.login()
   },
   computed: {
-    users() {
-      return store.state.posts;
-    },
+
+
   },
   data() {
     return {
       email: "",
       password: "",
       user: null,
+      username:''
     };
   },
   methods: {
@@ -35,13 +34,6 @@ export default {
         password: this.password,
         
       });
-      // console.log(store.state.posts);
-      // this.$store.posts.details.email == email &  posts.details.password == password
-      //   ? (user = user)
-      //   : incorrect;
-
-      // alert("found you");
-      // alert("No user found, please register");
     },
   },
 };

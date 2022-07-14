@@ -7,20 +7,23 @@ export default createStore({
     user: null,
   },
   getters: {
-    // allData: axios
-    //   .get("/path", (res) => {
-    //     res.json();
-    //   })
-    //   .then((data) => console.log(data)),
-    getPost(state) {
-      state.posts;
-    },
+    // getUser(state){
+    //   user: (state) => {
+    //     const user = state.user.map( user => {
+    //         return {
+    //             userame:  '**' + product.name + '**',
+    //             price: product.price / 2,
+    //         };
+    //     });
+    //     return saleProducts;
+    // }
+    // }
   },
   mutations: {
     setPost(state, posts) {
       state.posts = posts;
     },
-    setUser(state, user) {
+    setUser(state,payload ){
       state.user = user;
     },
 
