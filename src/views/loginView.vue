@@ -70,7 +70,7 @@ export default {
             />
           </div>
           <button type="submit" class="btn">Submit</button>
-          <div v-if="user">Welcome {{ data.username }}</div>
+          <div v-if="user">Welcome {{ user.username }}</div>
         </form>
       </div>
     </div>
@@ -83,14 +83,18 @@ export default {
 <script>
 import store from "../store";
 export default {
-
   data() {
     return {
       email: "",
       password: "",
       user: null,
-      username: "",
     };
+  },
+  computed: {
+    user() {
+      console.log(this.$store.state.user);
+      return this.$store.state.user;
+    },
   },
   methods: {
     login() {

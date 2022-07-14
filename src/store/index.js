@@ -23,7 +23,7 @@ export default createStore({
     setPost(state, posts) {
       state.posts = posts;
     },
-    setUser(state,payload ){
+    setUser(state, user) {
       state.user = user;
     },
 
@@ -88,12 +88,13 @@ export default createStore({
             if (databasePass !== password) {
               alert("Password doesnt match");
             } else {
-              let user=data
-              return user
+              let user = data;
+              return user;
             }
           }
         });
       console.log(response);
+      context.commit("setUser", response[0]);
     },
   },
   modules: {},
