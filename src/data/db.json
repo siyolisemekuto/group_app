@@ -9,11 +9,9 @@
       "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
       "heading": "Your pathFinder is here",
       "blurb": "profile pic by lyy at danbooru.donmai.us",
-     "friendsList": [2, 3, 4] },
-    { "id": 1,
-      "messageID":1,
-       "messageType": "text", "messageKey": "" },
-    { "id": 1, "postID": 1, "postType": "text", "postString": "meow" },
+      "friendsList": [2, 3, 4]
+    },
+
     {
       "id": 2,
       "email": "abdool@gmail.com",
@@ -23,9 +21,9 @@
       "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
       "heading": "Your pathFinder is here",
       "blurb": "profile pic by lyy at danbooru.donmai.us",
-     "friendsList": [1, 3, 4] },
-    { "id": 2,"messageID":2, "messageType": "text", "messageKey": "" },
-    { "id": 2, "postID": 1, "postType": "text", "postString": "tree" },
+      "friendsList": [1, 3, 4]
+    },
+
     {
       "id": 3,
       "email": "king@gmail.com",
@@ -35,8 +33,7 @@
       "usericon": "https://cdn.donmai.us/sample/1b/3b/__yoroizuka_mizore_and_kasaki_nozomi_hibike_euphonium_and_1_more_drawn_by_lyy__sample-1b3b61b1a06c197a4c3ab1eba4a70ffc.jpg",
       "heading": "Your pathFinder is here",
       "blurb": "profile pic by lyy at danbooru.donmai.us",
-   "friendsList": [1, 2, 4] },
-    { "id": 3, "messageID":3, "messageType": "text", "messageKey": "" },
-    { "id": 3, "postID": 1, "postType": "text", "postString": "rock" }
+      "friendsList": [1, 2, 4]
+    }
   ]
 }
