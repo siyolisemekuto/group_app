@@ -130,7 +130,16 @@
   </div>
 </template>
 <script>
+import store from "../store";
+
 export default {
+   data() {
+    return {
+      email: "",
+      password: "",
+      user: null,
+    };
+  },
   methods: {
     updateProfile() {
       // get values from fields
@@ -138,6 +147,12 @@ export default {
       console.log(this.$store.state.user);
       // rewrite values
       this.$store.dispatch(setUser)
+    },
+    login() {
+      store.dispatch("login", {
+        email: this.email,
+        password: this.password,
+      });
     },
   },
   computed: {
@@ -150,8 +165,30 @@ export default {
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Ubuntu:wght@300&display=swap");
+#landing {
+  display: flex;
+  width: fit-content;
+  background: linear-gradient(0.5turn, #f5f5dc, #d8a23a);
+  height: fit-content;
+}
 #user-page {
   background-image: url("https://cdn.shopify.com/s/files/1/1294/9703/products/proud-new-mother-inuit-art-card.gif?v=1625188889");
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 5%;
+}
+.about-text {
+  width: fit-content;
+  text-align: center;
 }
 input {
   background: none;
@@ -175,6 +212,22 @@ h3 {
   height: fit-content;
   background: linear-gradient(0.5turn, #dbdb71, #d8a23a);
 }
+.inputs {
+  width: 450px;
+  padding: 10px;
+  margin: 20px;
+  border: none;
+  border-bottom: 1px solid;
+  background: inherit;
+}
+.btn {
+  margin-top: 20px;
+  padding: 5px;
+  font-size: large;
+  border-radius: 9px;
+  background: none;
+}
+
 .user {
   padding: 10%;
   display: flex;
@@ -228,4 +281,5 @@ img {
 .i {
   font-size: 2em;
 }
+
 </style>

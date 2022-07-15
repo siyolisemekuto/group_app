@@ -2,10 +2,7 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>|
-    <router-link to="/login">login</router-link>|
-    <div v-if="user">
       <router-link to="/profile">profile</router-link>
-    </div>
   </nav>
   <div v-for="post in posts" :key="post.postID">
     <h1>{{ post.postStatus }}</h1>

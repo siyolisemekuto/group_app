@@ -114,7 +114,7 @@ img {
   width: fit-content;
   height: fit-content;
   margin: auto;
-  display: flex;
+  display: flex;  
   flex-direction: column;
   padding: 10px;
 }
