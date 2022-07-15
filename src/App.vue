@@ -1,7 +1,5 @@
 <template>
   <Navbar/>
-  <SingleView/>
-  <HomeView/>
   <router-view></router-view>
   <Footer/>
 </template>
@@ -21,6 +19,7 @@ export default{
 
 #app {
   text-align: center;
+  overflow-x:hidden ;
 
 }
 

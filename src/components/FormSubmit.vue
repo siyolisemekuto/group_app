@@ -15,7 +15,7 @@
   </div>
       </div>
       <div class="col">
-        <img alt="logo" src="../assets/iconrebg.png">
+        <img alt="logo" :src="imgUrl">
 
   </div>
       </div> 
@@ -24,20 +24,13 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+ data(){
+  return{
+    imgUrl:"https://i.postimg.cc/QtgWzTVZ/icon-1.png"
   }
+ }
 }
-//  data() {
-// return {
-//    email:'',
-//    Password:''
-// }
-// }
-// methods:{
-// SubmitForm(){
-// }
-// }
+
 
 </script>
 
@@ -67,13 +60,13 @@ justify-content: center;
   text-align: center;
 }
 img{
-  width:37rem;
-  height:50rem;
+  width:vw;
+  height:30vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
   background:none;
-  object-fit: cover;
+  object-fit: center;
 }
 
 .container{
@@ -85,7 +78,7 @@ img{
   padding: 10px;
 }
 .inputs{
-    width: 450px;
+    width: 70%;
     padding: 10px;
     margin: 20px;
     border: none;
@@ -107,10 +100,14 @@ form{
   flex-direction:column;
   justify-content: center;
 }
-/* @media only screen and (max-width: 600px){ */
-  /* #about{
-    display:flex;
-    flex:wrap;
+ @media only screen and (max-width: 600px){ 
+   p.about-text{
+    width:75vw;
   }
-} */ 
+  h1{
+    margin-top:auto;
+    display: flex;
+    justify-content: center;
+  }
+}  
 </style>

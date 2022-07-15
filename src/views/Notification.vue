@@ -13,8 +13,9 @@
             <img :src="notice_imageUrl" alt="">
           <h3>{{notice_sender}}</h3>
             <p>{{Quote.string}}</p>
-            </div>
+            </div>     
     </div>
+
     </div>
     </section>
 </template>
@@ -31,18 +32,15 @@ export default {
     },
     mounted(){
     this.$store.dispatch("getQuotes")
-    quoteToday:""
-    methods: {
-    picker: {
-    let quoteChosen = Math.floor(Math.random() * this.quotes.length);
-    this.quoteToday = this.list[quoteChosen];
-  }
-}
 },
 computed:{
     Quotes(){
         return this.$store.state.Quotes
-    }
+      }
+},
+methods: {
+  
+
 }
 }
 </script>
@@ -59,7 +57,7 @@ section{
     margin-top:50px ;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+gap:10px;
 }
 .notice{
 border:1px solid black;

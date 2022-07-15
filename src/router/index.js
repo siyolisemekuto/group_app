@@ -38,6 +38,12 @@ const routes = [
     name: 'SingleView',
  
     component: () => import('../views/SingleView.vue')
+  },
+  {
+    path: '/notification',
+    name: 'notification',
+ 
+    component: () => import('../views/Notification.vue')
   }
 ]
 
