@@ -1,3 +1,4 @@
+import { json, response } from "express";
 import { createStore } from "vuex";
 // import axios from "axios";
 
@@ -74,8 +75,8 @@ export default createStore({
 
     //update profile
     updateProfile: (context, payload) => {
-      context.commit("setUser",payload)
-      alert("active")
+      context.commit("setUser", payload);
+      alert("active");
     },
 
     //feedView.vue
@@ -110,6 +111,24 @@ export default createStore({
           }
         });
       console.log(response);
+      context.commit("setUser", response[0]);
+    },
+    registerUser(context, payload) {
+      alert("welcome new member");
+      const { email, password } = payload;
+      fetch("http://localhost:3000/data", {
+        method: post,
+        body: json.stringify({
+          email: email,
+          password: password,
+        }),
+        headers: {
+          "content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("registerUser", json));
+
       context.commit("setUser", response[0]);
     },
   },

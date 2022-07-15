@@ -37,6 +37,7 @@
             />
           </div>
           <button type="submit" class="btn">Submit</button>
+          <button  @click="registerUser" type="submit" class="btn">register</button>
         
         </form>
       </div>
