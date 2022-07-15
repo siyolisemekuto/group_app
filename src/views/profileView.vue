@@ -15,54 +15,50 @@
         <div id="user-img">
           <img :src="user.usericon" alt="user" class="img" />
         </div>
-        <H1><input type="text"
-              
-            name="username"
+        <H1
+          ><input
+            @change="updateProfile()"
+            type="text"
             class="i"
-            :value="user.UserName"> {{ user.username }}</H1>
+            v-model="user.username"
+        /></H1>
         <H3
           ><input
+            @change="updateProfile()"
             type="email"
-            v-model="email"
-            name="email"
             class="i"
-            :placeholder="email"
+            v-model="user.email"
         /></H3>
         <H5
           ><input
+            @change="updateProfile()"
             type="password"
-            v-model="password"
-            name="password"
             class="i"
-            :placeholder="password"
+            v-model="user.password"
         /></H5>
         <!-- <H2>Bio</H2>  -->
         <H5
           ><input
+            @change="updateProfile()"
             type="text"
-            v-model="heading"
-            name="heading"
             class="i"
-            :placeholder="heading"
+            v-model="user.heading"
         /></H5>
         <H5
           ><input
+            @change="updateProfile()"
             type="text"
-            v-model="blurb"
-            name="blurb"
             class="i"
-            :placeholder="blurb"
+            v-model="user.blurb"
         /></H5>
-        <input/>
-        <p>
-          <input
+        <H5
+          ><input
+            @change="updateProfile()"
             type="text"
-            v-model="nl"
-            name="blurb"
             class="i"
-            placeholder="replace image"
-          />
-        </p>
+           v-model="user.usericon"
+        /></H5>
+
         <div class="bio"></div>
       </div>
     </div>
@@ -86,8 +82,14 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
+  methods: {
+    updateProfile() {
+      // get values from fields
+    
+      console.log(this.$store.state.user);
+      // rewrite values
+      this.$store.dispatch(setUser)
+    },
   },
   computed: {
     user() {
@@ -95,6 +97,7 @@ export default {
       return this.$store.state.user;
     },
   },
+
 };
 </script>
 <style scoped>
@@ -105,20 +108,14 @@ input {
   background: none;
   border: none;
   text-align: center;
-  width: max-content;
+  /* width: max-content; */
+  overflow-wrap: normal;
+  overflow-y: scroll;
 }
-
 .i::after {
-  font: 1em sans-serif;
-  content: "edit";
-  /* content: "🖉"; */
-}
-
-h1::after {
-  font: 1em sans-serif;
-
   content: "🖉";
 }
+
 h1,
 h2,
 h3 {

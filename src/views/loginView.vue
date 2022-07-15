@@ -1,38 +1,4 @@
-<!-- <template>
-  <div class="hello">
-    <form @submit.prevent="login">
-      <input type="text" v-model="email" placeholder="email " />
-      <input type="password" v-model="password" placeholder="password" />
-      <button type="submit">submit</button>
-    </form>
-    <div v-if="user">Welcome {{ data.username }}</div>
-  </div>
-</template>
-<script>
-import store from "../store";
-export default {
-  mounted() {
-    let user = this.$store.dispatch.login();
-  },
-  computed: {},
-  data() {
-    return {
-      email: "",
-      password: "",
-      user: null,
-      username: "",
-    };
-  },
-  methods: {
-    login() {
-      store.dispatch("login", {
-        email: this.email,
-        password: this.password,
-      });
-    },
-  },
-};
-</script> -->
+
 <template>
   <div id="landing" class="row">
     <div id="about" class="col">
@@ -47,7 +13,8 @@ export default {
         laudantium fugit cupiditate libero!
       </p>
       <div class="container">
-        <h1>Welcome</h1>
+        <h1 v-if="!user">Welcome</h1> 
+        <h1 v-if="user">Welcome {{user.username}}</h1>
         <form @submit.prevent="login">
           <div>
             <input
@@ -70,7 +37,7 @@ export default {
             />
           </div>
           <button type="submit" class="btn">Submit</button>
-          <div v-if="user">Welcome {{ user.username }}</div>
+        
         </form>
       </div>
     </div>

@@ -25,8 +25,16 @@ export default createStore({
     },
     setUser(state, user) {
       state.user = user;
+      // let User =sessionStorage.setItem("user", JSON.stringify(user))
     },
-
+    updateProfile: (state, payload) => {
+      state.user.put((user) => {
+        state.user = payload;
+      });
+    },
+    // updaetprofile(state, user){
+    // state.user= user.push
+    // }
     //enterSite(){
     // return loginOBJ
     // }
@@ -62,6 +70,13 @@ export default createStore({
         };
       });
     },
+
+    //update profile
+    updateProfile: (context, payload) => {
+      context.commit("setUser",payload)
+      alert("active")
+    },
+
     //feedView.vue
     posts: (state) => {
       let posts = state.users.posts.map((post) => {

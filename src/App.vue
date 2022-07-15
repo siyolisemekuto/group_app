@@ -1,13 +1,12 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>|
-      <router-link to="/login">login</router-link>|
+    <router-link to="/about">About</router-link>|
+    <router-link to="/login">login</router-link>|
     <div v-if="user">
       <router-link to="/profile">profile</router-link>
     </div>
   </nav>
-  <div v-if="user">Welcome {{ user.username }}</div>
   <div v-for="post in posts" :key="post.postID">
     <h1>{{ post.postStatus }}</h1>
   </div>
@@ -24,13 +23,8 @@ export default {
   computed: {
     //place this in navbar
     user() {
-      console.log(this.$store.state.user);
-      return this.$store.state.user;
+      return this.$store.state.user
     },
-    // user() {
-    //   return store.state.user;
-    // },
-    //for navbar above
   },
   mounted() {
     store.dispatch("getPostData");
