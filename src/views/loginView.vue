@@ -1,6 +1,6 @@
 
 <template>
-  <div id="landing" class="row">
+  <div v-if="!user" id="landing" class="row">
     <div id="about" class="col">
       <h1>Inuit</h1>
       <p class="about-text">
@@ -15,6 +15,7 @@
       <div class="container">
         <h1 v-if="!user">Welcome</h1> 
         <h1 v-if="user">Welcome {{user.username}}</h1>
+        
         <form @submit.prevent="login">
           <div>
             <input
@@ -45,6 +46,8 @@
       <!-- <img alt="logo" src="../assets/iconrebg.png" /> -->
     </div>
   </div>
+<div v-if="user"></div>
+
 </template>
 
 <script>

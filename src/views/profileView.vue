@@ -1,4 +1,52 @@
 <template>
+ <div v-if="!user" id="landing" class="row">
+    <div id="about" class="col">
+      <h1>Inuit</h1>
+      <p class="about-text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
+        similique iusto perferendis libero architecto atque accusamus
+        repellendus esse, ut, sapiente reiciendis temporibus voluptas aliquam
+        laboriosam tempora voluptatum voluptatem quibusdam, ex eligendi
+        voluptate totam nihil consequatur illum. Fugiat, obcaecati beatae,
+        repellat recusandae magnam aspernatur facilis praesentium suscipit
+        laudantium fugit cupiditate libero!
+      </p>
+      <div class="container">
+        <h1 v-if="!user">Welcome</h1> 
+        <h1 v-if="user">Welcome {{user.username}}</h1>
+        
+        <form @submit.prevent="login">
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="inputs"
+              placeholder="Email"
+              required
+              v-model="email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="inputs"
+              placeholder="Password"
+              required
+              v-model="password"
+            />
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        
+        </form>
+      </div>
+    </div>
+    <div class="col">
+      <!-- <img alt="logo" src="../assets/iconrebg.png" /> -->
+    </div>
+  </div>
+<div v-if="user"></div>
+<div v-if="user">
   <section id="user-page">
     <!-- user icon -->
     <!-- has class for notications
@@ -79,6 +127,7 @@
       </div>
     </div>
   </section>
+  </div>
 </template>
 <script>
 export default {
