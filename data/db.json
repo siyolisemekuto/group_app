@@ -64,46 +64,6 @@
       "video": ""
     },
     {
-      "id": 9,
-      "user_id": 2,
-      "username": "Mikhail Thomas",
-      "message": "",
-      "image": "https://picsum.photos/200/300?random=9",
-      "video": ""
-    },
-    {
-      "id": 10,
-      "user_id": 2,
-      "username": "Cassidy Manuel",
-      "message": "",
-      "image": "https://picsum.photos/200/300?random=10",
-      "video": ""
-    },
-    {
-      "id": 11,
-      "user_id": 3,
-      "username": "Cameron Stemmet",
-      "message": "",
-      "image": "https://picsum.photos/200/300?random=11",
-      "video": ""
-    },
-    {
-      "id": 12,
-      "user_id": 3,
-      "username": "Zachary Williams",
-      "message": "",
-      "image": "https://picsum.photos/200/300?random=12",
-      "video": ""
-    },
-    {
-      "id": 13,
-      "user_id": 3,
-      "username": "Zoe Van De Schyff",
-      "message": "",
-      "image": "https://picsum.photos/200/300?random=13",
-      "video": ""
-    },
-    {
       "id": 14,
       "user_id": 3,
       "username": "Abu-Bakr Khan",

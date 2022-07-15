@@ -3,7 +3,7 @@
 
     <h1>Feed</h1>
       <div id="timeline">
-        <p @click="sortPost">sort Latest to oldest</p>
+        <p @click="sortPost">sort latest to oldest</p>
           <div v-if="posts" class="feed">
               <div v-for="post of posts" :key="post.id"  class="post">
         <p class="head">{{ post.username }}</p>
