@@ -25,6 +25,7 @@ export default createStore({
     },
     setUser(state, user) {
       state.user = user;
+      // state.commit("updateProfile",user)
       // let User =sessionStorage.setItem("user", JSON.stringify(user))
     },
     updateProfile: (state, payload) => {

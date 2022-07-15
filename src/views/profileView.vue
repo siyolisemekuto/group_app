@@ -45,7 +45,6 @@
       <!-- <img alt="logo" src="../assets/iconrebg.png" /> -->
     </div>
   </div>
-<div v-if="user"></div>
 <div v-if="user">
   <section id="user-page">
     <!-- user icon -->
@@ -142,11 +141,10 @@ export default {
   },
   methods: {
     updateProfile() {
-      // get values from fields
     
-      console.log(this.$store.state.user);
-      // rewrite values
       this.$store.dispatch(setUser)
+        state.commit("updateProfile",this.user)
+
     },
     login() {
       store.dispatch("login", {

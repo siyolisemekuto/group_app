@@ -46,7 +46,6 @@
       <!-- <img alt="logo" src="../assets/iconrebg.png" /> -->
     </div>
   </div>
-<div v-if="user"></div>
 
 </template>
 
