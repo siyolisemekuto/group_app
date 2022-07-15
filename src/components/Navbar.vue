@@ -2,6 +2,10 @@
     <div>
          <nav>
     <router-link to="/"><img :src=imgIcon /></router-link> 
+    <div>
+           <form  @submit.prevent="filteredPosts"> <input type="search" name="search" id="search" placeholder="Search" v-model="search">   <i @click="filteredPosts" class="fa-solid fa-magnifying-glass"></i></form>
+            {{search}}
+    </div>
     <div class='Icons'>
     <router-link to="/user"><i class="fa-solid fa-user"></i></router-link> |
         <router-link to="/theme"><i class="fa-solid fa-t"></i></router-link>    |
@@ -16,9 +20,23 @@
 export default {
      data(){
         return {
-            imgIcon:'https://i.postimg.cc/nrxbv1nL/icon-1.png'
+            imgIcon:'https://i.postimg.cc/nrxbv1nL/icon-1.png',
+            search:"",
+           
         }
     }
+    ,
+computed:{
+    posts(){
+        return this.$store.state.posts
+    }
+  },
+  methods: {
+   filteredPosts() {
+    const search = this.search
+    return this.$store.dispatch("getFilteredPosts",search)
+ } 
+  },
 }
 </script>
 <style scoped>

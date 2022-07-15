@@ -1,4 +1,3 @@
-import { buildSlots } from '@vue/compiler-core';
 import { createStore } from 'vuex'
 
 export default createStore({
@@ -18,8 +17,9 @@ export default createStore({
   },
   mutations: {
   setPosts(state,posts){
-    state.posts = posts;
-  },  setQuotes(state,quotes){
+    state.posts = posts 
+  },  
+  setQuotes(state,quotes){
     state.Quotes = quotes;
   },
   setUsersPosts(state,UserPosts){
@@ -28,6 +28,9 @@ export default createStore({
   setUser(state,user ){
     state.user = user;
   },
+  sortPosts(state){
+    state.posts.sort((a,b)=>{return a.id - b.id})
+  }
  },
   actions: {
   getPosts: async (context)=>{
@@ -41,9 +44,8 @@ export default createStore({
    .then(data => context.commit("setQuotes",data) )
   }
   ,
-getUserPosts: async (context,payload)=>{
-  const username = payload;
-  fetch(`http://localhost:3000/users?details${username}`)
+getUserPosts: async (context)=>{
+  fetch(`http://localhost:3000/posts?userId=${state.user.user_id}`)
   .then(res => res.json())
   .then(data => context.commit('setUsersPosts',data))
   },
@@ -68,10 +70,22 @@ getUserPosts: async (context,payload)=>{
     console.log(response);
     context.commit("setUser")
   },
-  delete: async (context,id)=>{
-    fetch(`http://localhost:3000/posts?${id}`, {
-  method: 'DELETE',
-});
+  deletePost: async (context,id)=>{
+    fetch("http://localhost:3000/posts/" + id, {
+    method: 'DELETE',
+    }).then(() => context.dispatch("getPosts",id))
+  },
+  getFilteredPosts: async (context,search)=>{
+     const response = await fetch("http://localhost:3000/posts")
+    .then(res => res.json())
+    .then(data => {
+      data.filter((post) =>{
+        return post.username.toLowerCase().includes(search.toLowerCase()),
+        console.log(post.username)
+      })
+    });
+    console.log(response);
+   context.commit("setPosts",search)
   }
   },
   modules: {

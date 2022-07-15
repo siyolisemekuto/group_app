@@ -3,12 +3,13 @@
 
     <h1>Feed</h1>
       <div id="timeline">
+        <p @click="sortPost">sort Latest to oldest</p>
           <div v-if="posts" class="feed">
               <div v-for="post of posts" :key="post.id"  class="post">
         <p class="head">{{ post.username }}</p>
         <img :src="post.image" alt="image"/>
         <span>{{ post.message }}</span>
-       <div @click="Delete" ></div>
+       <div @click="handleDelete(post.id)" ><i class="fa-solid fa-trash"></i></div>
         </div>
         </div>
        </div>
@@ -16,21 +17,36 @@
  </section>
 </template>
 <script>
+
+
 export default {
     
 mounted(){
-    this.$store.dispatch("getPosts")
+    this.$store.dispatch("getPosts");
+   
 },
 computed:{
     posts(){
         return this.$store.state.posts
     },
+   
+
     // components:{
 
     // }
+},
+methods: {
+  handleDelete(id){
+    return this.$store.dispatch("deletePost",id)
+  },
+     sortPost(){
+        return   this.$store.commit("sortPosts")
+    } 
+}
+    
 }
   
-}
+
 </script>
 <style>
 section{
@@ -52,7 +68,7 @@ p.head{
         font-size: 2rem;
 }
 .post{
-    width: 20vw;
+    width: fit-content;
     margin: 1%;
     border: 1px solid black;
     border-radius: 15px;

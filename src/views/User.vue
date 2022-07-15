@@ -29,6 +29,7 @@
       <h3>{{ post_sender }}</h3>
       </div>
       <p>{{ post_text }}</p>
+        {{Post_delete}}
      </div>
     </div>
     </section>
@@ -41,7 +42,8 @@ export default {
         UserName:"Lihle",
         post_text:"Lorem ipsum dolor sit amet consectetur odit distinctio officia laboriosam aliquam at, expedita dolorem earum autem et molestiae necessitatibus architecto aliquid dolore tenetur, voluptatem hic.",
         post_sender:"Username",
-        post_sender_img:"https://i.postimg.cc/nrxbv1nL/icon-1.png"
+        post_sender_img:"https://i.postimg.cc/nrxbv1nL/icon-1.png",
+        
      }
     }
 }
@@ -99,7 +101,7 @@ input{
 }
 .post{
     width: 250px;
-    height: 200px;
+    height: fit-content;
     border: 2px double #8F7245 ;
     border-radius:10px ;
     display: flex;
@@ -117,5 +119,8 @@ img{
     display: flex;
     margin: auto;
     gap:5px;
+}
+i{
+ text-align: end;
 }
 </style>
