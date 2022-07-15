@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Posts from '../views/PostsView.vue' 
-import postDetails from '../views/postDetails.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+// import Posts from '../views/PostsView.vue'
+// import postDetails from '../views/postDetails.vue'
 
 const routes = [
   {
@@ -17,7 +17,7 @@ const routes = [
   {
     path: "/post",
     name: "post",
-    component: () => import("../views/PostsView.vue"),
+    component: () => import("@/views/PostsView.vue"),
   },
   {
     path: "/post/:postId",
@@ -25,11 +25,17 @@ const routes = [
     component: () => import("../views/postDetails.vue"),
     props: true,
   },
+  {
+    path: "/post/:postId",
+    name: "postDetails",
+    component: () => import("../views/postDetails.vue"),
+    props: true,
+  }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

@@ -1,25 +1,24 @@
 <template>
-  <!-- <div class="card" style="width: 18rem;">
-    <img src="..." class="" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Captions</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <a href="#" class="btn btn-primary">See Captions</a>
+    <div>
+        <router-link :to="{name: 'post', params: {id: post.id}}" class="card">
+            <div class="card">
+                <h3>{{ post.username }}</h3>
+                <img :src="post.image" :alt="image"/>
+                <video :src="post.video" :alt="post.username"></video>
+                <h4>{{ post.message }}</h4>
+            </div>
+        </router-link>
+        
     </div>
-  </div> -->
 </template>
 <script>
 export default {
-    post(){
-      
-    },
-    methods: {
-      
-    },
+    props: ["post"]
 }
 </script>
 <style scoped>
-    .card{
-      background: black;
-    }
+.card{
+    width: 20vw;
+    height: fit-content;
+}
 </style>

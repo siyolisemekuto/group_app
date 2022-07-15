@@ -2,12 +2,25 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/post">Post</router-link>
+    <router-link to="/post">Post</router-link> |
   </nav>
-    <router-view />
-  
+  <router-view />
 </template>
 
+<script>
+import store from "@/store";
+export default {
+  mounted() {
+    this.getPost();
+  },
+  methods: {
+    getPost() {
+      store.dispatch("getPosts");
+      // console.log("test");
+    },
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
