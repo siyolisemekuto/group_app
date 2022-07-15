@@ -28,7 +28,10 @@
     </div>
 </template>
 <script>
+import store from "../store";
+
 export default {
+
     methods:{
         registerUser() {
       store.dispatch("registerUser", {

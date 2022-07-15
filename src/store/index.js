@@ -1,4 +1,4 @@
-import { json, response } from "express";
+// import express from "express";
 import { createStore } from "vuex";
 // import axios from "axios";
 
@@ -8,26 +8,14 @@ export default createStore({
     user: null,
   },
   getters: {
-    // getUser(state){
-    //   user: (state) => {
-    //     const user = state.user.map( user => {
-    //         return {
-    //             userame:  '**' + product.name + '**',
-    //             price: product.price / 2,
-    //         };
-    //     });
-    //     return saleProducts;
-    // }
-    // }
+    
   },
   mutations: {
     setPost(state, posts) {
       state.posts = posts;
-    },
+    },      
     setUser(state, user) {
       state.user = user;
-      // state.commit("updateProfile",user)
-      // let User =sessionStorage.setItem("user", JSON.stringify(user))
     },
     updateProfile: (state, payload) => {
       state.user.put((user) => {
@@ -100,7 +88,6 @@ export default createStore({
           if (data.length === 0) {
             alert("Email not found");
           } else {
-            // Compare password
             let databasePass = data[0].password;
             if (databasePass !== password) {
               alert("Password doesnt match");
@@ -112,13 +99,14 @@ export default createStore({
         });
       console.log(response);
       context.commit("setUser", response[0]);
-    },
+    }
+    ,
     registerUser(context, payload) {
       alert("welcome new member");
       const { email, password } = payload;
       fetch("http://localhost:3000/data", {
         method: post,
-        body: json.stringify({
+        body: express.json.stringify({
           email: email,
           password: password,
         }),
@@ -129,7 +117,7 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => context.commit("registerUser", json));
 
-      context.commit("setUser", response[0]);
+      context.commit("setUser", express.response[0]);
     },
   },
   modules: {},
