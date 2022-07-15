@@ -1,35 +1,36 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-      <router-link to="/profile">profile</router-link>|
-      <router-link to="/register">register</router-link>
-  </nav>
+<Navbar/>
+
+
   <div v-for="post in posts" :key="post.postID">
     <h1>{{ post.postStatus }}</h1>
   </div>
   <router-view />
+  <Footer/>
 </template>
 <script>
 import store from "./store";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 export default {
-  data() {
-    return {
-      posts: store.state.posts,
-    };
-  },
-  computed: {
-    //place this in navbar
-    user() {
-      return this.$store.state.user
+    data() {
+        return {
+            posts: store.state.posts,
+        };
     },
-  },
-  mounted() {
-    store.dispatch("getPostData");
-  },
-  created() {
-    // const getPosts = (this.posts = store.getters.getPost);
-  },
+    computed: {
+        //place this in navbar
+        user() {
+            return this.$store.state.user;
+        },
+    },
+    mounted() {
+        store.dispatch("getPostData");
+    },
+    created() {
+        // const getPosts = (this.posts = store.getters.getPost);
+    },
+    components: { Navbar,Footer }
 };
 // let user =JSON.parse(localStorage.user);
 // console.log(user)
@@ -43,17 +44,4 @@ export default {
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-  display: flex;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

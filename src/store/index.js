@@ -4,18 +4,22 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    posts: [],
+    posts: null,
     user: null,
+    Quotes:null
   },
   getters: {
     
   },
   mutations: {
-    setPost(state, posts) {
+    setPosts(state, posts) {
       state.posts = posts;
     },      
     setUser(state, user) {
       state.user = user;
+    },  
+    setQuotes(state,quotes){
+      state.Quotes = quotes;
     },
     updateProfile: (state, payload) => {
       state.user.put((user) => {
@@ -37,12 +41,12 @@ export default createStore({
     //searchItems()
   },
   actions: {
-    async getPostData(context) {
-      fetch("http://localhost:3000/data")
+    async getPostusers(context) {
+      fetch("http://localhost:3000/users")
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          context.commit("setPost", data);
+        .then((users) => {
+          console.log(users);
+          context.commit("setPost", users);
         });
     },
 
@@ -82,17 +86,17 @@ export default createStore({
     },
     login: async (context, payload) => {
       const { email, password } = payload;
-      let response = await fetch(`http://localhost:3000/Data/?email=${email}`)
+      let response = await fetch(`http://localhost:3000/users/?email=${email}`)
         .then((res) => res.json())
-        .then((data) => {
-          if (data.length === 0) {
+        .then((users) => {
+          if (users.length === 0) {
             alert("Email not found");
           } else {
-            let databasePass = data[0].password;
-            if (databasePass !== password) {
+            let usersbasePass = users[0].password;
+            if (usersbasePass !== password) {
               alert("Password doesnt match");
             } else {
-              let user = data;
+              let user = users;
               return user;
             }
           }
@@ -104,7 +108,7 @@ export default createStore({
     registerUser(context, payload) {
       alert("welcome new member");
       const { email, password } = payload;
-      fetch("http://localhost:3000/data", {
+      fetch("http://localhost:3000/users", {
         method: post,
         body: express.json.stringify({
           email: email,
@@ -119,6 +123,63 @@ export default createStore({
 
       context.commit("setUser", express.response[0]);
     },
-  },
-  modules: {},
-});
+    getPosts: async (context)=>{
+      fetch("http://localhost:3000/posts")
+      .then(res => res.json())
+      .then(data => context.commit("setPosts",data))
+    },
+    getQuotes: async (context)=>{
+     fetch('http://localhost:3000/quotes')
+     .then(res => res.json())
+     .then(data => context.commit("setQuotes",data) )
+    }
+    ,
+  getUserPosts: async (context)=>{
+    fetch(`http://localhost:3000/posts?userId=${state.user.user_id}`)
+    .then(res => res.json())
+    .then(data => context.commit('setUsersPosts',data))
+    },
+
+    //Add New Post
+    addNewPost: async (context, post) => {
+      fetch("http://localhost:3000/posts", {
+        method: "POST",
+        body: JSON.stringify({
+           username:post.username,
+          image:post.image,
+          message:post.message,
+          video:post.video
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+
+        .then((json) => {
+          console.log(json);
+        });
+      context.commit("setPosts");
+    },
+    deletePost: async (context,id)=>{
+      fetch("http://localhost:3000/posts/" + id, {
+      method: 'DELETE',
+      }).then(() => context.dispatch("getPosts",id))
+    },
+    getFilteredPosts: async (context,search)=>{
+       const response = await fetch("http://localhost:3000/posts")
+      .then(res => res.json())
+      .then(data => {
+        data.filter((post) =>{
+          return post.username.toLowerCase().includes(search.toLowerCase()),
+          console.log(post.username)
+        })
+      });
+      console.log(response);
+     context.commit("setPosts",search)
+    }
+    },
+
+
+  modules:{}
+})

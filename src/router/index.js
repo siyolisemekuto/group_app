@@ -23,12 +23,19 @@ const routes = [
     component: () => import('../views/profileView.vue')
   },
   {
-    path: '/about',
+    path: '/viewall_feed',
     name: 'about',
   
-    component: () => import('../views/AboutView.vue')
+    component: () => import('../views/ViewAll_Feed.vue')
+  },
+  {
+    path: '/notification',
+    name: 'notification',
+  
+    component: () => import('../views/Notification.vue')
   }
 ]
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

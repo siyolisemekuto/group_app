@@ -1,15 +1,18 @@
 <template>
-  <div v-for="post in posts" :key="post.postID"></div>
+<Landing/>
+<FormSubmit/>
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import FormSubmit from "@/components/FormSubmit.vue";
+import Landing from '@/components/landing.vue';
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+ Landing,
+ FormSubmit
   },
   computed: {
     // $state.users

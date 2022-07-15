@@ -1,6 +1,5 @@
 
 <template>
-<landing></landing>
   <div v-if="!user" id="landing" class="row">
     <div id="about" class="col">
       <h1>Inuit</h1>
