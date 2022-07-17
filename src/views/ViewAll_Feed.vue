@@ -6,35 +6,33 @@
       <p @click="sortPost">sort Latest to oldest</p>
 
       <div v-if="posts" class="feed">
-
-      <button type="toggle" @click="scrollFeed()">scroll</button>
-      <div v-if="lazyScroll">
-        <marquee scrollamount="30" direction="up">
-            
+        <button type="toggle" @click="scrollFeed()">scroll</button>
+        <div v-if="lazyScroll">
+          <marquee scrollamount="5" vspace="10%" direction="up">
             <div v-for="post of posts" :key="post.id" class="post">
-          <p class="head">{{ post.username }}</p>
-          <div class="postdetails">
+              <p class="head">{{ post.username }}</p>
+              <div class="postdetails">
+                <img :src="post.image" />
+                <span>{{ post.message }}</span>
+                <div @click="handleDelete(post.id)">
+                  <i class="fa-solid fa-trash" style="margin-top: 15px"></i>
+                </div>
+              </div>
+            </div>
+          </marquee>
+        </div>
+        <div v-if="!lazyScroll" class="manualFeed">
+          <div v-for="post of posts" :key="post.id" class="post">
+            <p class="head">{{ post.username }}</p>
+            <div class="postdetails">
               <img :src="post.image" alt="image" />
-            <span>{{ post.message }}</span>
-            <div @click="handleDelete(post.id)">
-              <i class="fa-solid fa-trash" style="margin-top: 15px"></i>
+              <span>{{ post.message }}</span>
+              <div @click="handleDelete(post.id)">
+                <i class="fa-solid fa-trash" style="margin-top: 15px"></i>
+              </div>
             </div>
           </div>
         </div>
-        </marquee>
-     </div>
-     <div v-if="!lazyScroll" class="manualFeed">
-    <div v-for="post of posts" :key="post.id" class="post">
-          <p class="head">{{ post.username }}</p>
-          <div class="postdetails">
-              <img :src="post.image" alt="image" />
-            <span>{{ post.message }}</span>
-            <div @click="handleDelete(post.id)">
-              <i class="fa-solid fa-trash" style="margin-top: 15px"></i>
-            </div>
-          </div>
-        </div> 
-     </div>
       </div>
     </div>
   </section>
@@ -46,7 +44,7 @@ export default {
   mounted() {
     this.$store.dispatch("getPosts");
   },
-  
+
   computed: {
     posts() {
       return this.$store.state.posts;
@@ -55,34 +53,41 @@ export default {
       console.log(this.$store.state.lazyScroll);
       return this.$store.state.lazyScroll;
     },
-  
   },
   methods: {
     handleDelete(id) {
       return this.$store.dispatch("deletePost", id);
     },
     sortPost() {
-        return this.$store.commit("sortPosts");
+      return this.$store.commit("sortPosts");
     },
-        scrollFeed(){
-            this.$store.state.lazyScroll=!this.$store.state.lazyScroll
-            let lazyScroll= this.$store.state.lazyScroll
-                console.log(lazyScroll ,Math.random()*5)
-        }
+    scrollFeed() {
+      this.$store.state.lazyScroll = !this.$store.state.lazyScroll;
+      let lazyScroll = this.$store.state.lazyScroll;
+      console.log(lazyScroll, Math.random() * 5);
+    },
   },
   components: { AddNewPost },
 };
 </script>
 <style scoped>
+
 section {
   padding-top: 50px;
-  background-color: #f5f5dc;
-  height: fit-content;
-  background: url("https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fartlogic-res.cloudinary.com%2Fw_1200%2Cc_limit%2Cf_auto%2Cfl_lossy%2Cq_auto%2Fws-firstarts%2Fusr%2Fimages%2Fexhibitions%2Fgroup_images_override%2F39%2Fds2281-1-2.jpg");
+background-color: #d8a23a;
+opacity: 0.8;
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #d8a23a 40px ), repeating-linear-gradient( #f6f6f655, #f6f6f6 );
+
+
+height: fit-content;
+  /* background : url("https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fartlogic-res.cloudinary.com%2Fw_1200%2Cc_limit%2Cf_auto%2Cfl_lossy%2Cq_auto%2Fws-firstarts%2Fusr%2Fimages%2Fexhibitions%2Fgroup_images_override%2F39%2Fds2281-1-2.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fit;
+ */
 }
 marquee {
+    height: 90vh;
+    overflow-y:scroll ;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -90,7 +95,7 @@ marquee {
   align-items: stretch;
   justify-content: center;
 }
-.manualFeed{
+.manualFeed {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -106,26 +111,26 @@ p.head {
 }
 .post {
   margin: 5%;
-/* display: flex; */
+  /* display: flex; */
   border-radius: 15px;
-  padding:5%;
+  padding: 5%;
   background-color: #d8a23a;
   color: #4f4538;
   width: fit-content;
   /* flex-grow: 1; */
 }
 .postdetails {
-    display: flex;
+  display: flex;
   flex-direction: column;
 }
 img {
-    width: 20vw;
-    border-radius: 15px;
+  width: 20vw;
+  border-radius: 15px;
   height: fit-content;
   margin-inline: auto;
 }
-.manualFeed >*{
-padding: 3%;
-margin :1%;
+.manualFeed > * {
+  padding: 3%;
+  margin: 1%;
 }
 </style>

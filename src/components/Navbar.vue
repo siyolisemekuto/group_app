@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>
+    <nav id="nav">
       <div v-if="!user">
         <router-link to="/"><img :src="imgIcon" /></router-link>
       </div>
@@ -93,6 +93,10 @@ nav {
   justify-content: space-between;
   box-shadow: 2px 1px;
   background-color: #8f7245;
+}
+#nav{
+  opacity: 1;
+
 }
 nav a {
   font-weight: bold;

@@ -48,5 +48,8 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+nav{
+     opacity: 1;
+}
 
 </style>
