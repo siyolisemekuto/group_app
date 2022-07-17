@@ -1,4 +1,3 @@
-
 <template>
   <div v-if="!user" id="landing" class="row">
     <div id="about" class="col">
@@ -13,9 +12,9 @@
         laudantium fugit cupiditate libero!
       </p>
       <div class="container">
-        <h1 v-if="!user">Welcome</h1> 
-        <h1 v-if="user">Welcome {{user.username}}</h1>
-        
+        <h1 v-if="!user">Welcome</h1>
+        <h1 v-if="user">Welcome {{ user.username }}</h1>
+
         <form @submit.prevent="login">
           <div>
             <input
@@ -38,15 +37,14 @@
             />
           </div>
           <button type="submit" class="btn">Submit</button>
-        
+          <router-link to="/register">register</router-link>
         </form>
       </div>
     </div>
     <div class="col">
-        <img alt="logo" :src="imgUrl">
+      <!-- <img alt="logo" :src="imgUrl" /> -->
     </div>
   </div>
-
 </template>
 
 <script>
@@ -57,8 +55,7 @@ export default {
       email: "",
       password: "",
       user: null,
-      imgUrl:"https://i.postimg.cc/nrxbv1nL/icon-1.png"
-
+      imgUrl: "https://i.postimg.cc/nrxbv1nL/icon-1.png",
     };
   },
   computed: {
@@ -115,7 +112,7 @@ img {
   width: fit-content;
   height: fit-content;
   margin: auto;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   padding: 10px;
 }

@@ -1,12 +1,15 @@
-// import express from "express";
 import { createStore } from "vuex";
 // import axios from "axios";
 
+
+
 export default createStore({
+  
   state: {
     posts: null,
     user: null,
-    Quotes:null
+    Quotes:null,
+    lazySCroll:false
   },
   getters: {
     
@@ -17,6 +20,7 @@ export default createStore({
     },      
     setUser(state, user) {
       state.user = user;
+      context.commit("setUser", user);
     },  
     setQuotes(state,quotes){
       state.Quotes = quotes;
@@ -106,10 +110,10 @@ export default createStore({
     }
     ,
     registerUser(context, payload) {
-      alert("welcome new member");
+   
       const { email, password } = payload;
       fetch("http://localhost:3000/users", {
-        method: post,
+        method: "POST",
         body: express.json.stringify({
           email: email,
           password: password,
@@ -118,10 +122,11 @@ export default createStore({
           "content-type": "application/json; charset=UTF-8",
         },
       })
-        .then((response) => response.json())
-        .then((json) => context.commit("registerUser", json));
-
+      .then((response) => response.json())
+      .then((json) => context.commit("registerUser", json));
+      
       context.commit("setUser", express.response[0]);
+      alert("welcome new member");
     },
     getPosts: async (context)=>{
       fetch("http://localhost:3000/posts")
